@@ -15,10 +15,10 @@
             font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
             line-height: 1.8;
             color: #333333;
-            background-color: #fcfbf9;
+            background-color: #fdfbf7;
         }
         a {
-            color: #8c765c;
+            color: #b0512e;
             text-decoration: none;
         }
         img {
@@ -38,7 +38,8 @@
             margin-bottom: 30px;
             position: relative;
             padding-bottom: 10px;
-            color: #2c2520;
+            color: #3e2723;
+            letter-spacing: 0.05em;
         }
         .section-title::after {
             content: '';
@@ -46,20 +47,20 @@
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
-            width: 50px;
+            width: 40px;
             height: 2px;
-            background-color: #8c765c;
+            background-color: #d87a56;
         }
 
         /* 1. ヘッダー */
         header {
-            background-color: #1a1613;
+            background-color: #2b1d19;
             color: #ffffff;
             padding: 20px 0;
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.15);
         }
         header .container {
             display: flex;
@@ -75,8 +76,8 @@
         /* メインビジュアル */
         .hero {
             width: 100%;
-            height: 60vh;
-            min-height: 300px;
+            height: 55vh;
+            min-height: 320px;
             overflow: hidden;
             position: relative;
         }
@@ -84,6 +85,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: center 60%; /* カウンターが綺麗に見える位置に調整 */
         }
 
         /* 2. お店の紹介文 */
@@ -95,42 +97,48 @@
         .intro-text {
             max-width: 700px;
             margin: 0 auto;
-            font-size: 1.1rem;
-            color: #4a423c;
+            font-size: 1.05rem;
+            color: #4e342e;
             padding: 0 10px;
+        }
+        .intro-text p {
+            margin-bottom: 10px;
+        }
+        .intro-text p:last-child {
+            margin-bottom: 0;
         }
 
         /* 3. メニュー・サービス紹介 */
         .menu-service {
             padding: 60px 0;
-            background-color: #f7f5f0;
+            background-color: #f7f3eb;
         }
         .menu-flex {
             display: flex;
             flex-direction: column;
-            gap: 40px;
+            gap: 35px;
             align-items: center;
         }
         .menu-image {
             width: 100%;
-            max-width: 500px;
-            border-radius: 4px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            max-width: 480px;
+            border-radius: 6px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            overflow: hidden;
         }
         .menu-info {
             width: 100%;
             max-width: 600px;
         }
         .menu-item-title {
-            font-size: 1.4rem;
-            color: #2c2520;
+            font-size: 1.35rem;
+            color: #2b1d19;
             margin-bottom: 15px;
-            border-left: 4px solid #8c765c;
-            padding-left: 10px;
+            border-left: 4px solid #d87a56;
+            padding-left: 12px;
         }
         .menu-description {
-            color: #555555;
-            margin-bottom: 20px;
+            color: #5d4037;
         }
 
         /* 4. アクセス情報 */
@@ -145,37 +153,44 @@
             border-collapse: collapse;
         }
         .access-table th, .access-table td {
-            padding: 15px;
-            border-bottom: 1px solid #e6e1da;
+            padding: 16px;
+            border-bottom: 1px solid #efebe9;
             text-align: left;
         }
         .access-table th {
-            width: 30%;
-            color: #2c2520;
+            width: 25%;
+            color: #3e2723;
             font-weight: 600;
             vertical-align: top;
+        }
+        .access-table td {
+            color: #5d4037;
         }
 
         /* 5. フッター */
         footer {
-            background-color: #1a1613;
-            color: #a69e96;
+            background-color: #2b1d19;
+            color: #bbadaa;
             text-align: center;
-            padding: 20px 0;
+            padding: 25px 0;
             font-size: 0.85rem;
+            letter-spacing: 0.05em;
         }
 
         /* レスポンシブデザイン（タブレット・PC向け） */
         @media (min-width: 768px) {
             header h1 {
-                font-size: 1.8rem;
+                font-size: 1.75rem;
             }
             .section-title {
-                font-size: 2.2rem;
-                margin-bottom: 40px;
+                font-size: 2.1rem;
+                margin-bottom: 45px;
             }
             .intro {
                 padding: 80px 0;
+            }
+            .intro-text {
+                font-size: 1.15rem;
             }
             .menu-flex {
                 flex-direction: row;
@@ -187,6 +202,9 @@
             }
             .menu-info {
                 width: 50%;
+            }
+            .access {
+                padding: 80px 0;
             }
         }
     </style>
@@ -200,16 +218,16 @@
     </header>
 
     <div class="hero">
-        <img src="images/hero.jpg" alt="ウルフのアジト 店舗イメージ">
+        <img src="images/hero.jpg" alt="ウルフのアジト 店内カウンター席">
     </div>
 
     <section class="intro">
         <div class="container">
-            <h2 class="section-title">ABOUT US</h2>
+            <h2 class="section-title">ABOUT</h2>
             <div class="intro-text">
-                <p>札幌市・狸小路商店街の雑居ビル3階にひっそりと佇む、大人の方が集う隠れ家居酒屋です。</p>
-                <p>道産食材を中心に出汁を効かせた滋味豊かな手作りおばんざいと、厳選した日本酒をご用意しております。</p>
-                <p>我が家で一杯楽しむような心地よい家飲み感覚で、寛ぎと安らぎのひとときを心ゆくまでお過ごしください。</p>
+                <p>札幌・狸小路5丁目のビル3階に佇む、大人が心地よく集う隠れ家居酒屋です。</p>
+                <p>温かみのある木目のカウンター席で、我が家に帰ってきたような寛ぎの時間をお届けします。</p>
+                <p>店主こだわりの手作りおばんざいや美味しいお酒とともに、特別なひとときをお過ごしください。</p>
             </div>
         </div>
     </section>
@@ -219,12 +237,12 @@
             <h2 class="section-title">MENU & SERVICE</h2>
             <div class="menu-flex">
                 <div class="menu-image">
-                    <img src="images/menu1.jpg" alt="おすすめ料理・おばんざい">
+                    <img src="images/menu1.jpg" alt="おすすめメニュー">
                 </div>
                 <div class="menu-info">
-                    <h3 class="menu-item-title">こだわりのおばんざいと厳選地酒</h3>
+                    <h3 class="menu-item-title">日替わりおばんざいと厳選酒</h3>
                     <p class="menu-description">
-                        素材の持ち味を活かした日替わりのおばんざいや、お一人様でも気軽に楽しめる「一人鍋」など、お酒の肴にぴったりな品々を取り揃えております。厚岸直送の牡蠣やジビエなど、北海道ならではの旬の味覚を、厳選銘柄の日本酒と共にご堪能ください。
+                        北海道の新鮮な食材や旬の味覚を活かした、心に染みる手作りおばんざいをご用意しております。お一人様でも気軽に楽しめる小鉢から、お酒が進むこだわりの逸品まで、豊富に揃った地酒やワインと合わせてお楽しみください。
                     </p>
                 </div>
             </div>
@@ -247,7 +265,7 @@
                     <th>アクセス</th>
                     <td>
                         地下鉄「大通駅」「すすきの駅」より各徒歩3分<br>
-                        （狸小路商店街5丁目エリア）
+                        （狸小路商店街5丁目内）
                     </td>
                 </tr>
                 <tr>
@@ -256,7 +274,7 @@
                 </tr>
                 <tr>
                     <th>席数</th>
-                    <td>16席（カウンター8席、テーブル席あり）</td>
+                    <td>16席（居心地の良いカウンター席、テーブル席あり）</td>
                 </tr>
             </table>
         </div>
